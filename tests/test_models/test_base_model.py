@@ -77,7 +77,7 @@ class TestBaseModel(unittest.TestCase):
                 self.assertIs(type(inst.__dict__[attr]), typ)
         self.assertEqual(inst.name, "Holberton")
         self.assertEqual(inst.number, 89)
-
+  
     def test_datetime_attributes(self):
         """Test that two BaseModel instances have different datetime objects
         and that upon creation have identical updated_at and created_at
@@ -85,7 +85,7 @@ class TestBaseModel(unittest.TestCase):
         tic = datetime.now()
         inst1 = BaseModel()
         toc = datetime.now()
-        self.assert(tic <= inst1.created_at <= toc)
+        self.assertTrue(tic <= inst1.created_at <= toc)
         time.sleep(1e-4)
         tic = datetime.now()
         inst2 = BaseModel()
